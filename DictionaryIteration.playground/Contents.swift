@@ -16,7 +16,14 @@
  * The Kinks: _Low Budget_
  * The Beatles: _Sgt. Pepper's Lonely Hearts Club Band_
  */
-// write your code here
+var bands = [
+
+    "Nirvana" : "Nevermind",
+    "Blondie" : "Parallel Lines",
+    "The Kinks" : "Low Budget",
+    "The Beatles" : "Sgt. Pepper's Lonely Hearts Club Band"
+
+]
 
 
 
@@ -28,8 +35,7 @@
 /*: question2
  ### 2. Oops, we forgot an album! Add the Pixie's _Doolittle_ to the dictionary you created in Question 1.
  */
-// write your code here
-
+bands["Pixie"] = "Doolittle"
 
 
 
@@ -40,7 +46,7 @@
 /*: question3
  ### 3. We don't care that much about The Kinks. Delete them from the dictionary you created in Question 1.
  */
-// write your code here
+bands["The Kinks"] = nil
 
 
 
@@ -54,7 +60,16 @@
  ### 4. A band name has been defined in the constant `bandName` below. Using this constant and the dictionary you created in Question 1, print "<Band>'s top-selling album was <Album>" to the console.
  */
 let bandName = "Nirvana"
-// write your code here
+
+let album = bands[bandName]
+
+if let album = album {
+    
+    print("\(bandName)'s top-selling album was \(album)")
+}
+    
+
+
 
 
 
@@ -66,8 +81,11 @@ let bandName = "Nirvana"
 /*: question5
  ### 5. Iterate over the dictionary you created in Question 1 and print "<Band>'s top-selling album was <Album>" for each item in the dictionary.
  */
-// write your code here
 
+for (name, album) in bands {
+    
+    print("\(name)'s top-selling album was \(album)")
+}
 
 
 
@@ -78,8 +96,6 @@ let bandName = "Nirvana"
 /*: question6
  ### 6. What type of data structure is returned when you iterate over a dictionary?
  */
-
-
 
 
 
@@ -105,7 +121,15 @@ let bandName = "Nirvana"
  * Grade 11: C
  * Grade 12: B
  */
-// write your code here
+let examGrades = [
+    
+    9 : "B",
+    10 : "A",
+    11 : "C",
+    12 : "B"
+
+
+]
 
 
 
@@ -117,7 +141,10 @@ let bandName = "Nirvana"
 /*: question9
  ### 9. Print the message "Grade <Grade> got <Score>" for each grade in the dictionary you created in Question 8.
  */
-// write your code here
+for (grade, score) in examGrades {
+    
+    print("Grade \(grade) got \(score)")
+}
 
 
 
@@ -129,10 +156,27 @@ let bandName = "Nirvana"
 /*: question10
  ### 10. Find which grade got the highest score! Iterate through the dictionary to find the highest score, then print the message "Grade <Grade> got the highest score with <Score>!" to the console.
  */
-// write your code here
+var highestGrade = 0
 
+for (grade, score) in examGrades {
+    
+    
+    if let highScore = examGrades[highestGrade] {
+        
+        if score < highScore {
+            
+            highestGrade = grade
+        }
+    } else {
+        
+        highestGrade = grade
+    }
+}
 
-
+if let winningScore = examGrades[highestGrade] {
+    
+    print("Grade \(highestGrade) got the highest score with \(winningScore)!")
+}
 
 
 
