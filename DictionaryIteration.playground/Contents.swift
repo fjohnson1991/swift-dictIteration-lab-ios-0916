@@ -98,7 +98,7 @@ for (name, album) in bands {
  */
 
 
-*\string, string 
+
 
 
 
